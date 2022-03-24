@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'store/css/css.css' %}">
+    <title>{% block title %}{% endblock title %}</title>
+</head>
+<body>
+    <div class="flex">
+        <header>Samsung</header>
+        <main>
+            {% block main %}
+            {% endblock main %}
+        </main>
+        <footer><p>@ 2022  All Rights Reserved</p></footer>
+    </div>
+</body>
+</html>
