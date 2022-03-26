@@ -8,12 +8,19 @@
 </head>
 <body>
     <div class="flex">
-        <header>Samsung</header>
+        <header>
+            <svg width="136px" height="24px" class="logo">
+                <use xlink:href="{% static 'store/svg/sprites.svg' %}#logo"></use>
+            </svg>
+        </header>
         <main>
             {% block main %}
             {% endblock main %}
         </main>
-        <footer><p>@ 2022  All Rights Reserved</p></footer>
+
+        <footer>
+<!--           <p>@ 2022  All Rights Reserved</p>-->
+        </footer>
     </div>
 </body>
 </html>

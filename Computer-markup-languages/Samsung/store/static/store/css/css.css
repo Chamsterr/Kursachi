@@ -12,13 +12,26 @@ body {
   height: 100%; }
 
 header {
+  flex-basis: 10%;
   background-color: #DEDEDE;
-  flex-basis: 10%; }
+  position: relative; }
+
+.logo {
+  position: absolute;
+  left: 4%;
+  top: 35%; }
 
 main {
-  flex-basis: 80%; }
+  flex-basis: 80%;
+  background-color: #DEDEDE; }
 
 footer {
-  flex-basis: 10%; }
+  flex-basis: 10%;
+  background-color: #DEDEDE; }
+
+figure {
+  display: inline-block;
+  width: 30px;
+  height: 30px; }
 
 /*# sourceMappingURL=css.css.map */
