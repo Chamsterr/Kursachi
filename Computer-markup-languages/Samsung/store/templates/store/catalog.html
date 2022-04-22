@@ -1,0 +1,26 @@
+{% extends 'layout/base.html' %}
+{% load static %}
+{% block catalog-menu%}right_now{% endblock catalog-menu%}
+{% block main %}
+  <div class="grid_for_catalog">
+      <nav class="inside">
+        <ul>
+          {% for category in categories %}
+              <li> <a
+                class="{% if current_category.id == category.id %}right_now{% endif %}"
+                href="{% url 'store:catalog' category.pk %}">{{ category }}</a></li>
+          {% endfor %}
+        </ul>
+      </nav>
+      <div class="content-inside">
+        {% for product in products_in %}
+          <figure class="item-inside">
+            <a href="{% url 'store:product' product.pk %}">
+              <h5>{{ product.name }}</h5>
+              <img src="{{ product.image.url }}" alt="">
+            </a>
+          </figure>
+        {% endfor %}
+      </div>
+  </div>
+{% endblock main %}

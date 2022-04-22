@@ -1,0 +1,17 @@
+{% extends 'layout/base.html' %}
+{% load static %}
+{% block catalog-menu%}right_now{% endblock catalog-menu%}
+{% block main %}
+  <article class="product">
+    <div>
+      <img src="{{ product.image.url }}" alt="">
+    </div>
+    <div>
+      <ul>
+        <li> <span>Название</span> - {{ product.name }}</li>
+        <li> <span>Описание</span> - {{ product.description }}</li>
+        <li> <span>Цена</span> - {{ product.price }}</li>
+      </ul>
+    </div>
+  </article>
+{% endblock main %}
