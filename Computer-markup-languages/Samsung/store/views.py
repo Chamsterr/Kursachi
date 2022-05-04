@@ -7,9 +7,13 @@ products_preview = {x: Product.objects.filter(category=x)[:3]
 
 
 def index(request, template_name):
+    most_popular = {x: Product.objects.filter(category=x)[:1]
+                    for x in categories[:3]}
     context = {
         'products_preview': products_preview,
+        'most_popular': most_popular,
     }
+
     return render(request, template_name, context)
 
 
@@ -21,6 +25,16 @@ def category(request, template_name, category_id=None):
         'categories': categories,
         'products_preview': products_preview,
         'current_category': current_category,
+    }
+    return render(request, template_name, context)
+
+
+def all_products(request, template_name):
+    products_in = Product.objects.all()
+    context = {
+        'products_in': products_in,
+        'categories': categories,
+        'products_preview': products_preview,
     }
     return render(request, template_name, context)
 

@@ -17,17 +17,28 @@
           <use xlink:href="{% static 'store/svg/sprites.svg' %}#logo"></use>
         </svg>
       </a>
-      <div class="options">
-        <svg>
-          <use xlink:href="{% static 'store/svg/sprites.svg' %}#search"></use>
-        </svg>
-        <svg>
-          <use xlink:href="{% static 'store/svg/sprites.svg' %}#backet"></use>
-        </svg>
-        <input type="checkbox" id="burger">
+      <svg class="backet-menu">
+        <use xlink:href="{% static 'store/svg/sprites.svg' %}#backet"></use>
+      </svg>
+      <input type="checkbox" id="burger">
         <label for="burger">
           <svg class="burger-menu">
             <use xlink:href="{% static 'store/svg/sprites.svg' %}#burger"></use>
+          </svg>
+        </label>
+      <div class="d6">
+        <form>
+          <input type="text" placeholder="Искать здесь..." id="search">
+          <input type="submit" id="search-button" value=""/>
+          <label for="search">
+            <svg class="search-button">
+                <use xlink:href="{% static 'store/svg/sprites.svg' %}#search"></use>
+              </svg>
+          </label>
+        </form>
+        <label for="search">
+          <svg class="search-menu">
+            <use xlink:href="{% static 'store/svg/sprites.svg' %}#search"></use>
           </svg>
         </label>
       </div>

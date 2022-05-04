@@ -3,4 +3,24 @@
 {% block main-menu%}right_now{% endblock main-menu%}
 
 {% block main %}
+    <article class="index">
+        <div class="video">
+            <iframe
+              src="https://www.youtube.com/embed/h-vyOTZSuE0?mute=1&autoplay=1&loop" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; mute=1" allowfullscreen></iframe>
+        </div>
+        <h2>Часто смотрят:</h2>
+        <section class="little-cards">
+            {% for category, products in most_popular.items %}
+                <figure class="little-card {% if forloop.last %}last-card{% endif %}">
+                    <a href="{% url 'store:catalog' category.pk %}">
+                        <figcaption>{{ category }}</figcaption>
+                        {% for product in products %}
+                            <img src="{{ product.image.url }}" alt="">
+                        {% endfor %}
+                    </a>
+                </figure>
+            {% endfor %}
+        </section>
+    </article>
+
 {% endblock main %}

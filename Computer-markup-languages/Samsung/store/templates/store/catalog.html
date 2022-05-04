@@ -5,6 +5,7 @@
   <div class="grid_for_catalog">
       <nav class="inside">
         <ul>
+          <li><a href="{% url 'store:catalog' %}">Все товары</a></li>
           {% for category in categories %}
               <li> <a
                 class="{% if current_category.id == category.id %}right_now{% endif %}"
@@ -16,7 +17,7 @@
         {% for product in products_in %}
           <figure class="item-inside">
             <a href="{% url 'store:product' product.pk %}">
-              <h5>{{ product.name }}</h5>
+            <figcaption>{{ product.name }}</figcaption>
               <img src="{{ product.image.url }}" alt="">
             </a>
           </figure>

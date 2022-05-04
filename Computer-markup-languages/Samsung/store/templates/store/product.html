@@ -2,16 +2,21 @@
 {% load static %}
 {% block catalog-menu%}right_now{% endblock catalog-menu%}
 {% block main %}
-  <article class="product">
-    <div>
-      <img src="{{ product.image.url }}" alt="">
-    </div>
-    <div>
-      <ul>
-        <li> <span>Название</span> - {{ product.name }}</li>
-        <li> <span>Описание</span> - {{ product.description }}</li>
-        <li> <span>Цена</span> - {{ product.price }}</li>
-      </ul>
+  <article class="product-a">
+    <h2>{{ product.name }}</h2>
+    <div class="product">
+      <figure>
+        <img src="{{ product.image.url }}" alt="">
+      </figure>
+      <div>
+        <h2>Описание:</h2>
+          <div class="description">
+            {{ product.description }}
+          </div>
+          <h2>Характеристики:</h2>
+          <div class="attribute_list">
+            {{ product.attribute_list|linebreaksbr }}
+          </div>  
     </div>
   </article>
 {% endblock main %}
