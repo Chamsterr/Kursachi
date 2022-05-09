@@ -3,10 +3,10 @@
 xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 <xsl:template match="PRODUCT">
  <html>
-<head><title>My first template rule</title>
+<head><title>Info about QN700 Neo QLED 8K</title>
 </head>
  <body>
- <h2>Iinfo about QN700 Neo QLED 8K</h2>
+ <h2>Info about QN700 Neo QLED 8K</h2>
  <table border="1">
 
    <xsl:for-each select="Attributes">
