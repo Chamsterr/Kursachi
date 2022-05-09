@@ -48,9 +48,7 @@
       <nav>
         <ul>
           <li><a href="{% url 'store:index' %}" class="{% block main-menu%}{% endblock main-menu%} ">Главная</a></li>
-          <li class="catalog"><a
-            href="{% url 'store:catalog' %}"
-            class="{% block catalog-menu%}{% endblock catalog-menu%}">Каталог
+          <li class="catalog"><a href="{% url 'store:catalog' %}" class="{% block catalog-menu%}{% endblock catalog-menu%}">Каталог
           </a>
             <div class="catalog_preview">
               <div class="content">
@@ -59,7 +57,7 @@
                     <h5><a href="{% url 'store:catalog' category.pk %}">{{ category }}</a></h5>
                     <ul>
                       {% for product in products %}
-                            <li><a href="{% url 'store:product' product.pk %}">{{ product.name }}</a></li>
+                        <li><a href="{% url 'store:product' product.pk %}">{{ product.name }}</a></li>
                       {% endfor %}
                     </ul>
                   </div>
@@ -68,8 +66,7 @@
             </div>
           </li>
           <li><a href="{% url 'store:info' %}" class="{% block info-menu%}{% endblock info-menu%}">О сервисе</a></li>
-          <li><a href="{% url 'cart:cart_detail' %}"
-                 class="{% block pay-menu%}{% endblock pay-menu%}">Оплата</a></li>
+          <li><a href="{% url 'cart:cart_detail' %}" class="{% block pay-menu%}{% endblock pay-menu%}">Оплата</a></li>
         </ul>
       </nav>
     </header>
