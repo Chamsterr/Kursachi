@@ -1,11 +1,13 @@
 {% extends 'layout/base.html' %}
 {% load static %}
+{% block title %}Catalog{% endblock title %}
 {% block catalog-menu%}right_now{% endblock catalog-menu%}
 {% block main %}
   <div class="grid_for_catalog">
       <nav class="inside">
         <ul>
-          <li><a href="{% url 'store:catalog' %}">Все товары</a></li>
+          <li><a href="{% url 'store:catalog' %}"
+                 class="{% if request.get_full_path == '/catalog/' %}right_now{% endif %}"> Все товары</a></li>
           {% for category in categories %}
               <li> <a
                 class="{% if current_category.id == category.id %}right_now{% endif %}"

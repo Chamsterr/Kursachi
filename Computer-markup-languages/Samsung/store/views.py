@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Product, Category
+from cart.forms import CartAddProductForm
 
 categories = Category.objects.order_by().all()
 products_preview = {x: Product.objects.filter(category=x)[:3]
@@ -41,8 +42,10 @@ def all_products(request, template_name):
 
 def product(request, template_name, product_id):
     product_ = Product.objects.get(pk=product_id)
+    cart_product_form = CartAddProductForm()
     context = {
         'products_preview': products_preview,
         'product': product_,
+        'cart_product_form': cart_product_form,
     }
     return render(request, template_name, context)

@@ -1,5 +1,7 @@
 {% extends 'layout/base.html' %}
+{% load l10n %}
 {% load static %}
+{% block title %}{{ product.name }}{% endblock title %}
 {% block catalog-menu%}right_now{% endblock catalog-menu%}
 {% block main %}
   <article class="product-a">
@@ -16,7 +18,14 @@
           <h2>Характеристики:</h2>
           <div class="attribute_list">
             {{ product.attribute_list|linebreaksbr }}
-          </div>  
+          </div>
+        </div>
     </div>
+     <p class="add_to_cart">Добавить в корзину</p>
+      <form action="{% url 'cart:cart_add' product.id %}" method="post">
+          {{ cart_product_form }}
+          {% csrf_token %}
+          <input type="submit" value="BYN {{ product.price }}">
+      </form>
   </article>
 {% endblock main %}

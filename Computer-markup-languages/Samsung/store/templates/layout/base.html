@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{% static 'store/css/css.css' %}">
+    <link rel="shortcut icon" href="{% static 'store/svg/s.svg' %}"
+          type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
@@ -17,9 +19,11 @@
           <use xlink:href="{% static 'store/svg/sprites.svg' %}#logo"></use>
         </svg>
       </a>
-      <svg class="backet-menu">
-        <use xlink:href="{% static 'store/svg/sprites.svg' %}#backet"></use>
-      </svg>
+      <a href="{% url 'cart:cart_detail'%}">
+        <svg class="backet-menu">
+          <use xlink:href="{% static 'store/svg/sprites.svg' %}#backet"></use>
+        </svg>
+      </a>
       <input type="checkbox" id="burger">
         <label for="burger">
           <svg class="burger-menu">
@@ -46,7 +50,7 @@
         <ul>
           <li><a href="{% url 'store:index' %}" class="{% block main-menu%}{% endblock main-menu%} ">Главная</a></li>
           <li class="catalog"><a
-            href="{% url 'store:catalog' 1 %}"
+            href="{% url 'store:catalog' %}"
             class="{% block catalog-menu%}{% endblock catalog-menu%}">Каталог
           </a>
             <div class="catalog_preview">
@@ -65,7 +69,8 @@
             </div>
           </li>
           <li><a href="{% url 'store:info' %}" class="{% block info-menu%}{% endblock info-menu%}">О сервисе</a></li>
-          <li><a href="" class="{% block pay-menu%}{% endblock pay-menu%}">Оплата</a></li>
+          <li><a href="{% url 'cart:cart_detail' %}"
+                 class="{% block pay-menu%}{% endblock pay-menu%}">Оплата</a></li>
         </ul>
       </nav>
     </header>

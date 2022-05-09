@@ -124,14 +124,14 @@ nav li:hover .catalog_preview {
   height: 24px; }
 
 main {
-  flex: 1 0 auto; }
+  flex: 1 0 auto;
+  padding: 2%; }
 
 .info {
   width: 92%;
   margin: 0 auto;
   font-weight: 600; }
   .info h1 {
-    margin-top: 62px;
     margin-bottom: 10px;
     font-weight: 500; }
   .info h2 {
@@ -144,6 +144,64 @@ main {
   .info .conclusion {
     font-weight: bold;
     margin-top: 38px; }
+
+h1 {
+  text-align: center;
+  font-weight: normal; }
+
+.empty-cart p {
+  text-align: center;
+  margin-top: 5%; }
+  .empty-cart p a {
+    display: block;
+    margin-top: 5%;
+    font-weight: bold; }
+
+.cart {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center; }
+  .cart section {
+    background-color: white;
+    margin: auto;
+    border-radius: 10px; }
+  .cart img {
+    width: 15vw; }
+  .cart button {
+    margin: auto; }
+  .cart .first-col, .cart .second-col {
+    display: inline-block;
+    width: 30%; }
+  .cart form {
+    padding: 5%;
+    margin: auto;
+    width: 275px; }
+    .cart form input[type=text] {
+      border-radius: 4px; }
+    .cart form .for-bottom {
+      text-align: center;
+      padding: 2%; }
+  .cart table {
+    text-align: center;
+    box-sizing: content-box;
+    font-size: 15px;
+    border-bottom: 1px solid black;
+    margin: auto; }
+    .cart table th {
+      border-bottom: 1px solid black;
+      font-weight: normal;
+      min-width: 150px;
+      margin: 0px; }
+    .cart table .quantity {
+      min-width: 5px; }
+    .cart table .remove {
+      min-width: 20px; }
+    .cart table td {
+      border-radius: 4px; }
+    .cart table svg {
+      height: 15px;
+      width: 15px; }
 
 nav.inside {
   background: #D0D0D0;
@@ -203,11 +261,25 @@ footer {
     text-decoration: none; }
 
 .product-a {
-  padding: 1%; }
+  padding: 1%;
+  font-size: 25px; }
   .product-a h2 {
     text-align: center;
     font-weight: normal;
     font-size: 30px; }
+  .product-a .add_to_cart {
+    padding-top: 5%;
+    text-align: center; }
+  .product-a form {
+    text-align: center; }
+    .product-a form input {
+      padding: 1px;
+      font-size: 23px;
+      border-radius: 5px; }
+    .product-a form select {
+      font-size: 23px;
+      padding: 1px;
+      border-radius: 5px; }
 
 .index {
   max-width: 92%;
@@ -275,9 +347,6 @@ footer {
     border: 3px dashed black; }
   .product .description {
     margin-bottom: 5%; }
-  .product a
-  h5 {
-    font-weight: 200px; }
   .product figure {
     align-self: center; }
   .product img {
@@ -287,7 +356,7 @@ footer {
   .product tr {
     text-align: start; }
 
-.d6 input {
+header .d6 input {
   height: 30px;
   width: 0;
   border: none;
@@ -300,43 +369,43 @@ footer {
   z-index: 2;
   border-radius: 12px;
   box-sizing: border-box; }
-
-.d6 input:focus {
+  header .d6 input form label {
+    position: absolute;
+    top: 35%;
+    right: 30px;
+    z-index: 6;
+    display: none; }
+header .d6 input:focus {
   width: 20%;
   background: white;
-  z-index: 1; }
-
-input[type="checkbox"] {
+  z-index: 1;
+  padding-left: 1.5%; }
+header input[type="checkbox"] {
   display: none; }
-
-.d6 button {
+header .d6 .search-button {
   display: none; }
 
 @media screen and (max-width: 1150px) {
-  .d6 input {
+  header .d6 input {
     height: 100%;
     right: 0;
     top: 0; }
-
-  form {
+  header form {
     height: 100%; }
-
-  .d6 input:focus {
+  header .d6 input:focus {
     width: 100%;
     font-size: 25px;
     border-radius: 0;
     z-index: 2;
     padding: 0 75px 0 25px; }
-
-  .d6 button {
+  header .d6 button {
+    display: none; }
+  header form label {
+    position: absolute;
+    top: 35%;
+    right: 30px;
+    z-index: 6;
     display: none; } }
-form label {
-  position: absolute;
-  top: 35%;
-  right: 30px;
-  z-index: 6;
-  display: none; }
-
 @media screen and (max-width: 980px) {
   header .burger-menu {
     display: inline-block; }
@@ -406,12 +475,23 @@ form label {
   .little-cards .last-card {
     display: none; } }
 @media screen and (max-width: 650px) {
+  .logo {
+    left: 30px; }
+
   .index {
     padding-top: 7%;
     position: relative; }
     .index .video {
       padding: 0 35% 48% 0; }
     .index .little-cards {
-      flex-direction: column; } }
+      flex-direction: column; }
+
+  .cart {
+    margin-top: 5%;
+    display: block; }
+    .cart img {
+      width: 15vw; }
+    .cart table th {
+      min-width: 50px; } }
 
 /*# sourceMappingURL=css.css.map */

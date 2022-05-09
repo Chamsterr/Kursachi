@@ -1,0 +1,91 @@
+{% extends 'layout/base.html' %}
+{% load static %}
+{% block title %}Cart{% endblock title %}
+{% block pay-menu%}right_now{% endblock pay-menu%}
+{% block main %}
+<h1>Корзина</h1>
+  <article class="{% if cart %}cart{% else %}empty-cart{% endif %}">
+    {% if cart %}
+    <section>
+      <table >
+        <thead>
+          <tr>
+              <th>Фото</th>
+              <th>Название</th>
+              <th class="quantity">Кол-во</th>
+              <th>Цена за ед.</th>
+              <th>Цена</th>
+              <th class="remove">Удл.</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in cart %}
+            {% with product=item.product %}
+              <tr>
+                <td>
+                  <img src="{{ product.image.url }}" alt="">
+                </td>
+                <td>
+                  <a href="{% url 'store:product' product.id%}">{{ product.name }}</a>
+                </td>
+                <td>
+                  {{ item.quantity  }}
+                </td>
+                <td class="num">
+                  BYN {{ item.price }}
+                </td>
+                <td class="num">
+                  BYN {{ item.total_price }}
+                </td>
+                <td>
+                  <a href="{% url 'cart:cart_remove' product.id%}">
+                    <svg>
+                      <use xlink:href="{% static 'store/svg/sprites.svg' %}#cross"></use>
+                    </svg>
+                  </a>
+                </td>
+              </tr>
+            {% endwith %}
+          {% endfor %}
+        </tbody>
+        <tfoot>
+          <tr class="total">
+              <td>Всего</td>
+              <td colspan="5">BYN {{ cart.get_total_price }}</td>
+          </tr>
+        </tfoot>
+      </table>
+      <form action="">
+        {% csrf_token %}
+        <div class="form-row">
+          <div class="first-col">
+            <label for="Name">Ваше имя: </label>
+          </div>
+          <div class="second-col">
+            <input type="text" id="Name" name="firstname" placeholder="Иван">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="first-col">
+            <label for="Phone">Телефон:</label>
+          </div>
+          <div class="second-col">
+            <input type="text" id="Phone" name="phone-number"
+                   placeholder="+37525976851">
+          </div>
+          <div class="for-bottom">
+            <button>
+              Позвоните мне!
+            </button>
+          </div>
+        </div>
+      </form>
+    </section>
+    {% else %}
+        <p>
+          Пусто...
+          <a href="{% url 'store:catalog' %}">Каталог</a>
+        </p>
+    {% endif %}
+  </article>
+{% endblock main %}
