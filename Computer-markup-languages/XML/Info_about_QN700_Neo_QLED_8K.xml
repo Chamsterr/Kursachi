@@ -1,0 +1,20 @@
+<?xml version="1.0"
+encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="1.xsl"?>
+
+
+<PRODUCT>
+  <Attributes>
+    <Screen_diagonal>75</Screen_diagonal>
+    <Resolution>7680x4320 (8K UHD)</Resolution>
+    <Matrix_frequency>60 Гц</Matrix_frequency>
+    <Width>1668.3 мм</Width>
+    <Heihgt_with_stand>1022.9 мм</Heihgt_with_stand>
+    <Depth_with_stand>320.5 мм</Depth_with_stand>
+    <Heihgt>955.6 мм</Heihgt>
+    <Panel_thickness>18.1 мм</Panel_thickness>
+    <Weight_with_stand>42.2 кг</Weight_with_stand>
+    <Weight>32.1 кг</Weight>
+  </Attributes>
+</PRODUCT>
+
