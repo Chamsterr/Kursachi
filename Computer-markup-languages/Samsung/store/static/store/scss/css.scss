@@ -7,8 +7,12 @@ $light-text: #484848;
     height: 30px;
 }
 @mixin vertical-centering{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 @mixin options{
     position: absolute;
@@ -50,13 +54,20 @@ body {
     border-radius: 8px;
 }
 .flex_for_base{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     height: 100%;
 }
 
 .grid_for_catalog{
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: 20% 80%;
     grid-template-columns: 20% 80%;
     grid-auto-rows: minmax(475px, auto);
     padding-top: 2%;
@@ -65,7 +76,9 @@ body {
 }
 
 header{
-    flex: 0 0 auto;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
     height: 95px;
     position: relative;
     z-index: 5;
@@ -118,7 +131,10 @@ header{
 
 .content{
     @include vertical-centering;
-    flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
 }
 .row{
     margin: 10px 20px 10px 20px;
@@ -136,13 +152,16 @@ header{
 .catalog_preview .content{
   background: white;
   padding: 0 100px 25px 100px;
-  box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+  -webkit-box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+          box-shadow: 0 6px 10px rgba(0,0,0,0.15);
 }
 .catalog{
     height: 65px;
 }
 
 nav li:hover .catalog_preview{
+  -webkit-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
   transition: all 0.4s ease;
   top: 70%;
   width: 100%;
@@ -165,7 +184,9 @@ nav li:hover .catalog_preview{
 
 
 main{
-    flex: 1 0 auto;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 auto;
+            flex: 1 0 auto;
     padding: 2%;
 }
 
@@ -211,8 +232,12 @@ h1{
 .cart{
     height: 100%;
     width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     section{
         background-color: white;
         margin: auto;
@@ -242,7 +267,8 @@ h1{
     }
     table{
         text-align: center;
-        box-sizing: content-box;
+        -webkit-box-sizing: content-box;
+                box-sizing: content-box;
         font-size: 15px;
         border-bottom: 1px solid black;
         margin: auto;
@@ -262,8 +288,8 @@ h1{
             border-radius: 4px;
         }
         svg{
-            height: 15px;
-            width: 15px;
+            height: 25px;
+            width: 25px;
         }
     }
 }
@@ -288,16 +314,20 @@ nav.inside{
 }
 .content-inside{
     padding: 6px 0 6px 0;
+    display: -ms-grid;
     display: grid;
     grid-template-columns: repeat(auto-fill, 250px);
     background: $main-color-2;
     margin-left: 5%;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 .item-inside{
     background: white;
     max-height: 200px;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    -webkit-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
     margin: 5%;
     figcaption{
@@ -315,10 +345,14 @@ nav.inside{
 }
 
 .item-inside:hover{
-    transform: scale(1.075);
+    -webkit-transform: scale(1.075);
+        -ms-transform: scale(1.075);
+            transform: scale(1.075);
 }
 footer{
-    flex: 0 0 auto;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
 }
 .media{
     width: 290px;
@@ -368,7 +402,10 @@ footer{
         padding: 0 10px 28.5% 0;
         overflow: hidden;
         iframe{
-            object-fit: cover;
+            -o-object-fit: cover;
+               object-fit: cover;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
             position: absolute;
             left: 0;
@@ -383,14 +420,20 @@ footer{
         text-align: center;
     }
     .little-cards{
-        flex-direction: row;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
         @include vertical-centering;
-        align-items: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
             .little-card{
                 background: white;
                 height: 200px;
                 width: 200px;
-                box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+                -webkit-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+                        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
                 border-radius: 20px;
                 margin: 2.5%;
                 figcaption{
@@ -409,22 +452,35 @@ footer{
         }
 }
 .little-card:hover{
-    transform: scale(1.075);
+    -webkit-transform: scale(1.075);
+        -ms-transform: scale(1.075);
+            transform: scale(1.075);
 }
 
 .product{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
     height: 100%;
     font-size: 25px;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     margin: 0 auto;
     width: 92%;
     figure{
-        flex: 1;
+        -webkit-box-flex: 1;
+            -ms-flex: 1;
+                flex: 1;
     }
     div{
-        flex: 1;
+        -webkit-box-flex: 1;
+            -ms-flex: 1;
+                flex: 1;
     }
     .attribute_list{
         width: auto;
@@ -435,9 +491,11 @@ footer{
     .description{
         margin-bottom: 5%;
     }
-    
+
     figure{
-        align-self: center;
+        -ms-flex-item-align: center;
+            -ms-grid-row-align: center;
+            align-self: center;
     }
     img{
         width: 45vw;
@@ -456,13 +514,16 @@ header {
         border: none;
         outline: none;
         background: transparent;
+        -webkit-transition: 0.3s cubic-bezier(0, 0.8, 0, 1);
+        -o-transition: 0.3s cubic-bezier(0, 0.8, 0, 1);
         transition: 0.3s cubic-bezier(0, 0.8, 0, 1);
         position: absolute;
         right: 90px;
         top: 35%;
         z-index: 2;
         border-radius: 12px;
-        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
 
         form label {
             position: absolute;
@@ -538,7 +599,9 @@ form label {
         }
     }
     #burger:checked ~ label .burger-menu {
-            transform:  rotate(90deg);
+            -webkit-transform:  rotate(90deg);
+                -ms-transform:  rotate(90deg);
+                    transform:  rotate(90deg);
             z-index: 2;
         }
     input:focus ~ label{
@@ -552,7 +615,8 @@ form label {
             text-align: center;
             border-bottom-right-radius: 20px;
             border-bottom-left-radius: 20px;
-            box-shadow: 0 1px 1px rgba(50, 50, 50, 0.75);
+            -webkit-box-shadow: 0 1px 1px rgba(50, 50, 50, 0.75);
+                    box-shadow: 0 1px 1px rgba(50, 50, 50, 0.75);
             .catalog_preview{
                 display: none;
             }
@@ -561,7 +625,9 @@ form label {
             }
         }
     .grid_for_catalog{
+        -ms-grid-columns: auto;
         grid-template-columns: auto;
+        -ms-grid-rows: auto;
         grid-template-rows: auto;
         max-width: 92%;
         margin: 0 auto;
@@ -583,8 +649,13 @@ form label {
                 margin: 2.5% 0 0 0;
             }
     }
+    .grid_for_catalog > *:nth-child(1){-ms-grid-row: 1;-ms-grid-column: 1
+    }
     .product{
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
         padding: 10%;
         height: auto;
         width: auto;
@@ -600,7 +671,7 @@ form label {
 
 }
 
-@media screen and (max-width: 650px){
+@media screen and (max-width: 690px){
     .logo{
         left: 30px;
             }
@@ -611,7 +682,10 @@ form label {
                 padding: 0 35% 48% 0;
             }
             .little-cards{
-                flex-direction: column;
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                    -ms-flex-direction: column;
+                        flex-direction: column;
             }
         }
     .cart{
