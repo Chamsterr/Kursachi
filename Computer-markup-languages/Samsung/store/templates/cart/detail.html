@@ -15,7 +15,7 @@
               <th class="quantity">Кол-во</th>
               <th>Цена за ед.</th>
               <th>Цена</th>
-              <th class="remove">Удл.</th>
+              <th class="remove"></th>
           </tr>
         </thead>
         <tbody>
@@ -23,7 +23,7 @@
             {% with product=item.product %}
               <tr>
                 <td>
-                  <img src="{{ product.image.url }}" alt="">
+                  <img src="{{ product.image.url }}" alt="Product image">
                 </td>
                 <td>
                   <a href="{% url 'store:product' product.id%}">{{ product.name }}</a>

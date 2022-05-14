@@ -20,7 +20,7 @@
           <figure class="item-inside">
             <a href="{% url 'store:product' product.pk %}">
             <figcaption>{{ product.name }}</figcaption>
-              <img src="{{ product.image.url }}" alt="">
+              <img src="{{ product.image.url }}" alt="Product image">
             </a>
           </figure>
         {% endfor %}

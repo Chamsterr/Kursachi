@@ -16,7 +16,7 @@
                     <a href="{% url 'store:catalog' category.pk %}">
                         <figcaption>{{ category }}</figcaption>
                         {% for product in products %}
-                            <img src="{{ product.image.url }}" alt="">
+                            <img src="{{ product.image.url }}" alt="Product image">
                         {% endfor %}
                     </a>
                 </figure>
