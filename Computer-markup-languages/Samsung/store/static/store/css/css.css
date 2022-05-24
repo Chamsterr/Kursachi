@@ -120,9 +120,9 @@ header {
   height: 65px; }
 
 nav li:hover .catalog_preview {
-  -webkit-transition: all 0.4s ease unset;
-  -o-transition: all 0.4s ease unset;
-  transition: all 0.4s ease unset;
+  -webkit-transition: all 1s ease unset;
+  -o-transition: all 1s ease unset;
+  transition: all 1s ease unset;
   top: 70%;
   width: 100%;
   opacity: 1;
@@ -296,6 +296,7 @@ footer {
   padding: 1%;
   font-size: 25px; }
   .product-a h2 {
+    margin-bottom: 2%;
     text-align: center;
     font-weight: normal;
     font-size: 30px; }
@@ -394,7 +395,9 @@ footer {
   margin: 0 auto;
   width: 92%; }
   .product .attribute_list {
-    width: auto;
+    width: 65%;
+    margin: auto;
+    font-size: 20px;
     padding: 2%;
     background-color: #fff;
     border: 3px dashed black; }
@@ -549,6 +552,15 @@ header .d6 .search-button {
   .little-cards .last-card {
     display: none; } }
 @media screen and (max-width: 690px) {
+  h1 {
+    font-size: 30px; }
+
+  .product .description {
+    font-size: 20px; }
+  .product .attribute_list {
+    width: auto;
+    font-size: 17px; }
+
   .logo {
     left: 30px; }
 

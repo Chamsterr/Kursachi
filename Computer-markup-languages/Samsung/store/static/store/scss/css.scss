@@ -183,7 +183,7 @@ header{
 .catalog{height: 65px;}
 
 nav li:hover .catalog_preview{
-  @include for_transition(all, 0.4s, ease, unset);
+  @include for_transition(all, 1s, ease, unset);
   top: 70%;
   width: 100%;
   opacity: 1;
@@ -339,6 +339,7 @@ footer{@include for_flex(0, 0, auto);}
     padding: 1%;
     font-size: 25px;
     h2{
+        margin-bottom: 2%;
         text-align: center;
         font-weight: normal;
         font-size: 30px;}
@@ -403,7 +404,9 @@ footer{@include for_flex(0, 0, auto);}
     margin: 0 auto;
     width: 92%;
     .attribute_list{
-        width: auto;
+        width: 65%;
+        margin: auto;
+        font-size: 20px;
         padding: 2%;
         background-color: #fff;
         border: 3px dashed black;}
@@ -544,6 +547,13 @@ header {
 }
 
 @media screen and (max-width: 690px){
+    h1{ font-size: 30px;}
+    .product{
+        .description{
+            font-size: 20px;
+        }
+        .attribute_list{width: auto; font-size: 17px;}
+    }
     .logo{left: 30px;}
         .index{
             padding-top: 7%;
