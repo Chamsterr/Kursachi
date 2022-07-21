@@ -1,1 +1,1 @@
-# course projects at BSTU 
+# Сourse projects at BSTU 
